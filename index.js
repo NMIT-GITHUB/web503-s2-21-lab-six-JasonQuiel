@@ -1,11 +1,12 @@
 
   // Your web app's Firebase configuration
-
   const firebaseConfig = {
 
     apiKey: "AIzaSyD7r2Pg8VRvY6vqA8LHCR47ueV_uRHHuJs",
 
     authDomain: "weblab6-c89cb.firebaseapp.com",
+
+    databaseURL: "https://weblab6-c89cb-default-rtdb.firebaseio.com",
 
     projectId: "weblab6-c89cb",
 
@@ -13,7 +14,7 @@
 
     messagingSenderId: "416042648181",
 
-    appId: "1:416042648181:web:df68f54f9b050f824aee3c"
+    appId: "1:416042648181:web:56044e6b1eb2c16e4aee3c"
 
   };
 
@@ -22,10 +23,12 @@
 
   const app = initializeApp(firebaseConfig);
 
+ 
+
   firebase.initializeApp(config);
 
   // Firebase Database Reference and the child
-  const dbRef = firebase.database(https://weblab6-c89cb-default-rtdb.firebaseio.com/).ref(root);
+  const dbRef = firebase.database().ref();
   const usersRef = dbRef.child('users');
   
   
