@@ -1,54 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Sample CRUD Firebase Javascript - 01 Read Data</title>
-        <link rel="stylesheet" href="index.css" />
-    </head>
-    <body>
-        <h1>
-            Firebase CRUD with Vanilla Javascript
-            <br />
-            <small>
-                <em>01 Read Data</em>
-            </small>
-        </h1>
-        <ul id="userList"></ul>
-        <div id="userDetail">
-            <p>
-                Name :
-                <strong class="detailName"></strong>
-            </p>
-            <p>
-                Age:
-                <strong class="detailAge"></strong>
-            </p>
-            <p>
-                Email:
-                <strong class="detailEmail"></strong>
-            </p>
-        </div>
+  <head>
+    <meta charset="utf-8">
+    <title>Firebase CRUD </title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  
+  <body>
 
-        <!-- firebase sdk link goes here -->
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            const firebaseConfig = {
-              apiKey: "AIzaSyD7r2Pg8VRvY6vqA8LHCR47ueV_uRHHuJs",
-              authDomain: "weblab6-c89cb.firebaseapp.com",
-              projectId: "weblab6-c89cb",
-              storageBucket: "weblab6-c89cb.appspot.com",
-              messagingSenderId: "416042648181",
-              appId: "1:416042648181:web:df68f54f9b050f824aee3c"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-          </script>
-        <script type="text/javascript" src="index.js"></script>
-    </body>
+    <h1>Firebase CRUD
+        <br/><small><em>User App</em></small>
+    </h1>
+
+
+    <!-- add user  -->
+    
+    <section id="add-user-module" >
+        <button id="open-add-user-form-btn">+</button>
+        <form>
+            <h2>Add User</h2>
+            name:<br>
+            <input type='text' data-key='name' class='user-input'><br>
+            age:<br>
+            <input type='text' data-key='age' class='user-input'><br>
+            email:<br>
+            <input type='text' data-key='email' class='user-input'><br>
+            <button type='button' id="add-user-btn">add user</button>
+        </form>
+    </section>
+
+    <!-- edit user  -->
+    <section id="edit-user-module">
+        <form>
+            <h2>Edit user</h2>
+            <input type="hidden" class="edit-userid">
+            name:<br>
+            <input type='text' data-key='name' class='edit-user-input'><br>
+            age:<br>
+            <input type='text' data-key='age' class='edit-user-input'><br>
+            email:<br>
+            <input type='text' data-key='email' class='edit-user-input'><br>
+            <button type='button' id="edit-user-btn">save</button>
+        </form>
+    </section>
+
+
+    <!-- show user  -->
+    <ul id="user-list"></ul>
+    <div id="user-detail"></div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+  </body>
+
 </html>
